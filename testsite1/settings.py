@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'personal',
     'blog',
     'webapp',
+    'elearning',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
