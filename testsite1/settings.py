@@ -25,12 +25,15 @@ SECRET_KEY = 'n_15%(z!5q9y@v9k!9o2qbv6)m7875ihjxc(!y5i!3d$clc+w)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['datahouse.pythonanywhere.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'django_filters',
+    'myapi.apps.MyapiConfig',
     'personal',
     'blog',
     'webapp',
@@ -84,6 +87,9 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -122,3 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
