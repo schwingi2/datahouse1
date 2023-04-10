@@ -11,7 +11,7 @@ class TestpersonSerializer(serializers.HyperlinkedModelSerializer):
 
         #, 'temp_dec','temp_float','temp_char','humidity_dec','humidity_float','humidity_char')
 
-
+# outdated - delete
 class Hochbeet2Serializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Hochbeet2
