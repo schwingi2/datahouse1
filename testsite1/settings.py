@@ -25,7 +25,8 @@ SECRET_KEY = 'n_15%(z!5q9y@v9k!9o2qbv6)m7875ihjxc(!y5i!3d$clc+w)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['datahouse.pythonanywhere.com']
+ALLOWED_HOSTS = ['datahouse.pythonanywhere.com', 
+                 '127.0.0.1']
 
 
 # Application definition

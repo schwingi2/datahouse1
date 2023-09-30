@@ -23,6 +23,6 @@ urlpatterns = [
 	#path('', include('webapp.urls')),
     path('', include('personal.urls')),
     path('blog/', include('blog.urls')),
-    path('api/',include('myapi.urls'))
+    path('myapi/',include('myapi.urls'))
 
 ]
