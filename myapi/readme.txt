@@ -1,0 +1,1 @@
+https://michaeldel.github.io/posts/django-rest-auth-social-tutorial/

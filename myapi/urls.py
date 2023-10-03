@@ -15,16 +15,22 @@ Including another URLconf
 """
 
 from django.urls import path
+from rest_framework import routers
 from rest_framework.urlpatterns import format_suffix_patterns
-from myapi import views
+from . import views
 
 
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
+#router = routers.DefaultRouter()
+#router.register(r'Testperson', views.TestpersonViewSet)
+#router.register(r'Hochbeet2',views.Hochbeet2ViewSet)
+
 urlpatterns = [
-    path('Testperson/', views.TestpersonList.as_view()),
-    path('Testperson/<int:pk>/', views.TestpersonDetail.as_view()),
+    path('Testperson/', views.TestpersonList.as_view(), name='Testperson-list'),
+    path('Testperson/<int:pk>/', views.TestpersonDetail.as_view(), name='Testperson-detail'),
+    path('', views.api_root),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

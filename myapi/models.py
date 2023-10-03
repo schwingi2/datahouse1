@@ -6,19 +6,21 @@ from pygments.styles import get_all_styles
 from pygments.formatters.html import HtmlFormatter
 from pygments import highlight
 # from pygments
-LEXERS = [item for item in get_all_lexers() if item[1]]
-LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
-STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
+#https://learndjango.com/tutorials/official-django-rest-framework-tutorial-beginners
+#LEXERS = [item for item in get_all_lexers() if item[1]]
+#LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
+#STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
 
 # Create your models here.
 # models.py
+
 class Testperson(models.Model):
     pers_uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=60)
     alias = models.CharField(max_length=60)
     rec_time = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey('auth.User', related_name='Testperson', on_delete=models.CASCADE)
-    highlighted = models.TextField()
+    #highlighted = models.TextField()
     class Meta:
         ordering = ['-rec_time']
 
@@ -43,7 +45,6 @@ class Testperson(models.Model):
         #                        full=True, **options)
       #  self.highlighted = highlight(self.name)
         super().save(*args, **kwargs)
-
 class Hochbeet2(models.Model):
     #name = models.CharField(max_length=60)
     #alias = models.CharField(max_length=60)
