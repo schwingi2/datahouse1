@@ -30,6 +30,7 @@ from . import views
 urlpatterns = [
     path('Testperson/', views.TestpersonList.as_view(), name='Testperson-list'),
     path('Testperson/<int:pk>/', views.TestpersonDetail.as_view(), name='Testperson-detail'),
+    path('account/register', views.UserCreate.as_view()),
     path('', views.api_root),
 ]
 

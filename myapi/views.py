@@ -1,12 +1,15 @@
 # Create your views here.
 from .models import Testperson
+from django.contrib.auth.models import User
 from .serializers import TestpersonSerializer
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, status
 from rest_framework.decorators import api_view  
 from rest_framework.response import Response  
 from rest_framework.reverse import reverse  
+from .serializers import UserSerializer
 
 from .permissions import IsOwnerOrReadOnly
+
 
 @api_view(["GET"])  # new
 def api_root(request, format=None):
@@ -16,6 +19,10 @@ def api_root(request, format=None):
         }
     )
 
+class UserCreate(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (permissions.AllowAny, )
 
 class TestpersonList(generics.ListCreateAPIView):
     queryset = Testperson.objects.all()

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['datahouse.pythonanywhere.com',
 
 INSTALLED_APPS = [
     'rest_framework',
+   # 'rest_framework.authtoken'
     'django_filters',
     'myapi.apps.MyapiConfig',  
     'personal',
